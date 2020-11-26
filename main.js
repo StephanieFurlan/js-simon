@@ -7,15 +7,16 @@ $(document).ready(function() {
    // after 30 seconds hide numbers
    setTimeout(function () {
       $(".array-box").hide();
-      // var attempts = 0;
-      // var userArray = [];
-      // while (attempts < 5) {
-      //    var nmb = prompt("write a number");
-      //    userArray.push(parseInt(nmb));
-      //    attempts += 1;
-      // }
-      // var guessed = compareArrays(pcArray, userArray)
-      // $(".array-box").text("Hai indovinato " + guessed.length + " numeri, " + guessed );
+      var attempts = 0;
+      var userArray = [];
+      while (attempts < 5) {
+         var nmb = prompt("write a number");
+         userArray.push(parseInt(nmb));
+         attempts += 1;
+      }
+      var guessed = compareArrays(pcArray, userArray)
+      $(".array-box").text("Hai indovinato " + guessed.length + " numeri, " + guessed ).show();
+
    }, 5000);
 });
 
