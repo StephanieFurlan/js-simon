@@ -1,23 +1,55 @@
 $(document).ready(function() {
 
+   $(".inputs-box").hide();
    var pcArray = randomArray();
+
    // show 5 random numbers
-   $(".array-box").text(pcArray);
+   for (number of pcArray) {
+      var newDiv = document.createElement("div");
+      var newContent = document.createTextNode(number);
+      newDiv.classList.add("square");
+      newDiv.appendChild(newContent);
+      $(".numbers-box").append(newDiv);
+   }
+
+   // show counter
+   var start = 30;
+   $(".counter").text(start);
+   var countdown = setInterval(function() {
+      $(".counter").text(start);
+      if (start == 0) {
+         clearInterval(countdown)
+      }
+      start -= 1;
+   }, 1000);
 
    // after 30 seconds hide numbers
    setTimeout(function () {
-      $(".array-box").hide();
-      var attempts = 0;
-      var userArray = [];
-      while (attempts < 5) {
-         var nmb = prompt("write a number");
-         userArray.push(parseInt(nmb));
-         attempts += 1;
-      }
-      var guessed = compareArrays(pcArray, userArray)
-      $(".array-box").text("Hai indovinato " + guessed.length + " numeri, " + guessed ).show();
+      $(".message-box").hide();
+      $(".inputs-box").show();
 
-   }, 5000);
+      var userArray = [];
+      $("#check-btn").click(function(){
+         $(".input-number").each(function(){
+            userArray.push(parseInt($(this).val()));
+         });
+         $(".inputs-box").hide();
+         console.log(userArray);
+         console.log(pcArray);
+         var guessed = compareArrays(pcArray, userArray)
+         $(".result-box h1").text("You remembered " + guessed.length + " numbers. ");
+         $(".text").text("These are: " + guessed);
+      });
+
+
+
+   }, 1000);
+
+
+
+
+
+
 });
 
 

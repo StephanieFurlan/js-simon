@@ -3,12 +3,34 @@
    <head>
       <meta charset="utf-8">
       <title>JS Simon</title>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
 
    </head>
    <body>
-      <div class="array-box">
-         <h1>Your numebers</h1>
+      <div class="main-container">
+         <div class="message-box">
+            <h1>Try to remember these numbers</h1>
+            <div class="numbers-box"></div>
+            <div class="counter"></div>
+         </div>
+
+         <div class="inputs-box">
+            <h1>Type numbers you remember</h1>
+            <input class="input-number" type="number" name="" value="">
+            <input class="input-number" type="number" name="" value="">
+            <input class="input-number" type="number" name="" value="">
+            <input class="input-number" type="number" name="" value="">
+            <input class="input-number" type="number" name="" value="">
+            <button id="check-btn" type="button" name="button">Check</button>
+         </div>
+         <div class="result-box">
+            <h1></h1>
+            <div class="text"></div>
+         </div>
+
       </div>
       <script src="main.js" charset="utf-8"></script>
    </body>
